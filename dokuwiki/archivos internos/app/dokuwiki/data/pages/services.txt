@@ -1,0 +1,59 @@
+====== Our Services ======
+
+In our company we base our professional services operation on 3 main aspects:
+
+{{ :bridge2cloud.png?nolink |}}
+
+==== Bridge 2 Cloud ====
+
+
+
+  * Assessment / Coaching for Hybrid Cloud Adoption models, Migration Roadmap and operation models for Hybrid environments
+
+  * Cloud Modernization: Adaptation (re-shape) of existing applications (Web Middleware) using containerization technologies (Docker / Kubernetes) to provide agility and portability (OnPrem2 Cloud)
+
+  * Migration: Definition and implementation of migration roadmap appropriate to the technological reality
+
+  * Base infrastructure (shift & Lift): Servers / Storage
+
+  * Backup & Recovery Solutions: Cloud Storage
+
+  * Design and implementation of Containerization platforms
+
+
+
+----
+
+{{ :devops.png?nolink |}}
+
+==== DevOps ====
+
+
+  - Assessment / Coaching for DevOps Adoption models in native Cloud or Hybrid environments (Enterprise middleware + Cloud)
+  - Design and implementation of DevOps Solutions for legacy environments (iSeries COBOl / RPG Apps)
+  - DevOps platform implementation:
+    *     ALM
+    *     Continuous Integration
+    *     Continuous Delivery
+    *     Release Management
+    *     Continuous Testing
+    *     Design and implementation of virtualization services platforms (Virtualized Services)
+    *     Security
+
+
+----
+
+{{ :born2becloud.png?nolink |}}
+
+==== Born 2 Be Cloud ====
+
+
+  * Assessment / Coaching for the design and implementation of Native Cloud development methodologies
+
+  * Cloud Enterprise architectures for application development (serverless)
+
+  * Strategies in the use of APIs (API Management) and Cloud services
+
+  * Application integration with Hybrid Technology Enterprise platforms (Cloud - OnPrem)
+
+  * Implementation of ChatBots or Virtual Assistants (Multichannel)

@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dokuwiki-app
+  namespace: 3htp-dokuwiki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dokuwiki-app
+  template:
+    metadata:
+      labels:
+        app: dokuwiki-app
+    spec:
+      containers:
+      - image: 369595298303.dkr.ecr.us-east-2.amazonaws.com/dokuwiki:app
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "300m"
+          requests: 
+            memory: "256Mi"
+            cpu: "10m"
+        name: dokuwiki-app
+        securityContext:
+          runAsUser: 0
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: app-storage
+          mountPath: /var/www/html/dokuwiki/data
+        env:
+        - name: MYSQL_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: dokuwiki-config
+              key: MYSQL_HOST
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: dokuwiki-config
+              key: MYSQL_USER
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: dokuwiki-config
+              key: MYSQL_PASSWORD
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: dokuwiki-config
+              key: MYSQL_DATABASE
+      volumes:
+      - name: app-storage
+        persistentVolumeClaim:
+          claimName: dokuwiki-app-pvc

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dokuwiki-db-pv
+  namespace: 3htp-dokuwiki
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 200Mi
+  accessModes:
+    - ReadWriteOnce
+#  hostPath:
+#    path: "/mnt/3htp-kubernetes/QA/dokuwiki/db"
+  nfs:
+    path: /var/nfsshare/dokuwikidb #ansible
+    server: 172.26.17.16  #ansible IP
+    readOnly: false
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dokuwiki-db-pvc
+  namespace: 3htp-dokuwiki
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+

@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-dokuwiki
+  namespace: 3htp-dokuwiki
+  annotations:
+    ingress.kubernetes.io/affinity: cookie
+    #ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: service-dokuwiki-app
+          servicePort: 8080
+        path: /dokuwiki

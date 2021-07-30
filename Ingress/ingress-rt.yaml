@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-rt
+  namespace: 3htp-apps
+  annotations:
+    ingress.kubernetes.io/affinity: cookie
+spec:
+  rules:
+  - host: k8.3htp.com
+    http:
+      paths:
+      - path: /rt
+        backend:
+          serviceName: service-rt
+          servicePort: 80

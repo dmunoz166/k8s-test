@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-grafana
+  namespace: monitoring
+  annotations:
+    ingress.kubernetes.io/affinity: cookie
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /grafana
+          backend:
+            serviceName: grafana
+            servicePort: 3000

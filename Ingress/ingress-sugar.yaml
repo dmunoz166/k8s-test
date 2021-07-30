@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-sugar
+  namespace: 3htp-apps
+  annotations:
+    ingress.kubernetes.io/affinity: cookie
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: service-sugar
+          servicePort: 80
+        path: /sugar

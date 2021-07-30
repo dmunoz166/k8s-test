@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: 3htp-dokuwiki
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dokuwiki-config
+  namespace: 3htp-dokuwiki
+data:
+  MYSQL_ROOT_PASSWORD: mypassword
+  MYSQL_HOST: service-dokuwiki-db
+  MYSQL_USER: dokuuser
+  MYSQL_PASSWORD: secretpassword
+  MYSQL_DATABASE: dokuwikidb

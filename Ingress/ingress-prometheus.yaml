@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-prometheus
+  namespace: monitoring
+  annotations:
+    ingress.kubernetes.io/affinity: cookie
+    #ingress.kubernetes.io/rewrite-target: / 
+    ingress.kubernetes.io/auth-type: basic
+    ingress.kubernetes.io/auth-secret: basic-auth #nombre del secreto
+    ingress.kubernetes.io/auth-realm: "Autentificación Necesaria:"
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /prometheus
+          backend:
+            serviceName: prometheus-service
+            servicePort: 9090 
